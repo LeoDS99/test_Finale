@@ -1,0 +1,30 @@
+<h1>Activity</h1>
+<form action="" [formGroup]="activityForm" (ngSubmit)="submit()">
+  <div class="d-flex justify-content-evenly">
+    <select class="form-control" formControlName="tipo" name="tipo" id="tipo">
+      <option *ngFor="let type of Types; index as i" value="{{ type }}">
+        {{ type }}
+      </option>
+    </select>
+    <div>
+      <label for="partecipanti">Partecipanti</label>
+      <input
+        id="partecipanti"
+        class="form-control"
+        formControlName="partecipanti"
+        type="number"
+        min="0"
+      />
+    </div>
+    <div>
+      <label for="prezzo">Prezzo</label>
+      <input
+        type="range"
+        id="prezzo"
+        class="form-control"
+        formControlName="prezzo"
+      />
+    </div>
+    <button class="btn btn-primary" routerLink="/activity">Invia</button>
+  </div>
+</form>
